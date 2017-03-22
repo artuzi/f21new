@@ -9,7 +9,7 @@ public class TestaExclui {
 		
 		Contato contato = new Contato();
 		
-		contato.setId(4L);
+		contato.setId(2L);
 		
 		dao.remove(contato);
 		

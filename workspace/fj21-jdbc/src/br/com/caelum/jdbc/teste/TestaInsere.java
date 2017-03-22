@@ -10,11 +10,11 @@ public class TestaInsere {
 
 	public static void main(String[] args) {
 		Contato contato = new Contato();
-		contato.setNome("Mano menezes");
-		contato.setEmail("mmenezes@caelum.com.br");
+		contato.setNome("Juliana dos teste");
+		contato.setEmail("juliana@caelum.com.br");
 		contato.setEndereco("R. Vergueiro 3185 cj57");
 		//contato.setDataNascimento(Calendar.getInstance());
-		contato.setDataNascimento(new GregorianCalendar(1963,Calendar.AUGUST,21));
+		contato.setDataNascimento(new GregorianCalendar(1982,Calendar.FEBRUARY,19));
 		
 		ContatoDao dao = new ContatoDao();
 		
