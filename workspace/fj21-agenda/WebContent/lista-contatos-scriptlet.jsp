@@ -23,7 +23,8 @@
 				<td><%=contato.getEmail() %></td>
 				<td><%=contato.getEndereco() %></td>
 				
-		<% 	String dataFormatada = new SimpleDateFormat("dd/MM/yyyy").format(contato.getDataNascimento().getTime()); %>
+		<% 	String dataFormatada = 
+				new SimpleDateFormat("dd/MM/yyyy").format(contato.getDataNascimento().getTime()); %>
 				
 				<td><%=contato.getDataNascimento().getTime() %></td>
 				<td><%=dataFormatada%></td>
