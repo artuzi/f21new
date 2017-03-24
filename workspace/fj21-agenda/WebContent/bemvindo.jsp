@@ -24,6 +24,26 @@
 	<%=desenvolvido %>
 	
 	<br />
+	<br />
+
+	<ul>	
+	<%
+		for(int i=1; i<11; i++){
+	        out.println("<li>Count is: " + i + "</li>"); %>
+ 	<br/>
+    <% 
+		}
+	%>
+	</ul>
+
+ 	<br />
+	
+	<% String [] names = {"James", "Larry", "Tom", "Lacy"};
+		for( String name : names) {
+			out.println(name + ",");
+		}
+	%>
+	
 	
 	<%
 		System.out.println("Tudo foi executado!");
