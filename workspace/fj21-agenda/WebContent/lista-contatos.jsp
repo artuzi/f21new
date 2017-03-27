@@ -8,13 +8,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
+	<link href="css/jquery.css" rel="stylesheet">
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.js"></script>
 </head>
 
 <body>
+
+	<c:import url="cabecalho.jsp" />
+	
 	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao"/> 
 
-	<c:import url="cabecalho.jsp"></c:import>
 	
 	<table id="example" class="display" cellspacing="0" width="100%">
 	   <thead>
