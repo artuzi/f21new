@@ -23,6 +23,7 @@
 	<table id="example" class="display" cellspacing="0" width="100%">
 	   <thead>
 		<tr>
+			<th>Ação</th>
 			<th>Nome</th>
 			<th>E-mail</th>
 			<th>Endereço</th>
@@ -32,6 +33,10 @@
 	   <tbody>
 		<c:forEach var="contato" items="${dao.lista}">
 			<tr>
+				<td>
+					<a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a>
+				</td>
+				
 				<td>${contato.nome}</td>
 				<td>
 					<c:if test="${not empty contato.email}">
