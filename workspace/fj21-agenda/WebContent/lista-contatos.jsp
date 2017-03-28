@@ -17,9 +17,6 @@
 
 	<c:import url="cabecalho.jsp" />
 	
-	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao"/> 
-
-	
 	<table id="example" class="display" cellspacing="0" width="100%">
 	   <thead>
 		<tr>
@@ -31,7 +28,7 @@
 		</tr>
 	   </thead>
 	   <tbody>
-		<c:forEach var="contato" items="${dao.lista}">
+		<c:forEach var="contato" items="${contatos}">
 			<tr>
 				<td>
 					<a href="mvc?logica=RemoveContatoLogic&id=${contato.id}">Remover</a>

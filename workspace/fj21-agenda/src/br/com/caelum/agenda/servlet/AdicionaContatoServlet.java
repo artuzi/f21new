@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.caelum.agenda.dao.ContatoDao;
 import br.com.caelum.agenda.modelo.Contato;
+import br.com.caelum.testes.Gerajson;
 
 @WebServlet("/adicionaContato")
 public class AdicionaContatoServlet extends HttpServlet {
@@ -51,6 +52,10 @@ public class AdicionaContatoServlet extends HttpServlet {
 		
 		ContatoDao dao = new ContatoDao();
 		dao.adiciona(contato);
+		
+		//Gerajson gera = new Gerajson(contato);
+		
+		
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/contato-adicionado.jsp");
 		rd.forward(request, response);
