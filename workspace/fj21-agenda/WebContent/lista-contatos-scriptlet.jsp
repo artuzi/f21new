@@ -13,7 +13,11 @@
 <body>
 	<table>
 		<%
-		ContatoDao dao = new ContatoDao();
+		//Connection connection = (Connection) req.getAttribute("conexao");
+		
+		//precisa pegar a connection na requisicao. No ultimo exercicio foi colocado
+		//a connection na request via filtro.
+		ContatoDao dao = new ContatoDao(connection);
 		List<Contato> contatos = dao.getLista();
 		
 		for (Contato contato:contatos) {
