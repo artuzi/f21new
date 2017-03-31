@@ -5,11 +5,25 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+	<script type="text/javascript" src="resources/js/jquery.js"></script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+	<script type="text/javascript">
+		function finalizaAgora(id) {
+			$.post("finalizaTarefa", {'id' : id}, function() {
+				//selecionando o elemento html atraves da
+				//ID e alterando o HTML dele
+				$("#+tarefa_"+id).html("Finalizado");
+			});
+		}
+	</script>
+	
+	
+	
+	
 	<a href="novaTarefa">Criar nova tarefa</a>
 	
 	<br /> <br />
@@ -28,10 +42,14 @@
 			<tr>
 				<td>${tarefa.id}</td>
 				<td>${tarefa.descricao}</td>
-				<c:if test="${tarefa.finalizado} eq false}">
-					<td>Não finalizado</td>
+				<c:if test="${tarefa.finalizado eq false}">
+					<td id="tarefa_${tarefa.id}">
+						<a href="#" onClick="finalizaAgora(${tarefa.id})">
+							Finaliza agora!
+						</a>
+					</td>
 				</c:if>
-				<c:if test="${tarefa.finalizado} eq true}">
+				<c:if test="${tarefa.finalizado eq true}">
 					<td>Finalizado</td>
 				</c:if>
 				<td>

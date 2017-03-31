@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.caelum.tarefas.dao.JdbcTarefaDao;
 import br.com.caelum.tarefas.modelo.Tarefa;
@@ -54,5 +55,20 @@ public class TarefasController {
 		return "tarefa/mostra";
 	}
 
+	@RequestMapping("alteraTarefa")
+	public String mostra(Tarefa tarefa){
+		
+		JdbcTarefaDao dao = new JdbcTarefaDao();
+		dao.altera(tarefa);
+		return "redirect:listaTarefas";
+	}	
+	
+	@ResponseBody
+	@RequestMapping("finalizaTarefa")
+	public void finaliza(Long id){
+		
+		JdbcTarefaDao dao = new JdbcTarefaDao();
+		dao.finaliza(id);
+	}	
 
 }

@@ -23,4 +23,7 @@
 	</bean>
 	<mvc:default-servlet-handler/>
 
+	<mvc:interceptors>
+		<bean class="br.com.caelum.tarefas.interceptor.AutorizarInterceptor" />
+	</mvc:interceptors>
 </beans>

@@ -25,6 +25,8 @@ public class JdbcUsuarioDao {
 			throw new IllegalArgumentException("Usuário não deve ser nulo");
 		}
 
+		System.out.println("procurou se existe");
+		
 		try {
 			PreparedStatement stmt = this.connection
 					.prepareStatement("select * from usuarios where login = ? and senha = ?");
