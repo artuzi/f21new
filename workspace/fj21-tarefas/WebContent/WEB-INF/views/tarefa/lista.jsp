@@ -20,12 +20,14 @@
 			<th>Descricao</th>
 			<th>Finalizado?</th>
 			<th>Data de finalizacao</th>
+			<th>Remover</th>
+			<th>Alterar</th>
 		</tr>
 		
 		<c:forEach items="${tarefas}" var="tarefa">
 			<tr>
 				<td>${tarefa.id}</td>
-				<td>#{tarefa.descricao}</td>
+				<td>${tarefa.descricao}</td>
 				<c:if test="${tarefa.finalizado} eq false}">
 					<td>Não finalizado</td>
 				</c:if>
@@ -37,7 +39,8 @@
 				 	value="${tarefa.dataFinalizacao.time}"
 				 		pattern="dd/MM/yyyy"/>
 				 </td>
-				
+				<td><a href="removeTarefa?id=${tarefa.id}">Remover</a></td>
+				<td><a href="mostraTarefa?id=${tarefa.id}">Alterar</a></td>
 			</tr>
 		</c:forEach>
 	</table>
